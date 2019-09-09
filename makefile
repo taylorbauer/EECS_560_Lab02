@@ -1,9 +1,9 @@
-Lab2: main.o DoublyLinkedList.o Node.o
-	g++ -std=c++11 main.o DoublyLinkedList.o Node.o -o Lab2
-main.o: main.cpp DoublyLinkedList.h Node.h
+Lab2: main.o LinkedList.o Node.o
+	g++ -std=c++11 main.o LinkedList.o Node.o -o Lab2
+main.o: main.cpp LinkedList.h Node.h
 	g++ -std=c++11 -c main.cpp
-DoublyLinkedList.o: DoublyLinkedList.cpp DoublyLinkedList.h
-	g++ -std=c++11 -c DoublyLinkedList.cpp
+LinkedList.o: LinkedList.cpp LinkedList.h
+	g++ -std=c++11 -c LinkedList.cpp
 Node.o: Node.cpp Node.h
 	g++ -std=c++11 -c Node.cpp
 clean:

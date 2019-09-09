@@ -1,12 +1,16 @@
 //Originally copied from Lab 1
+// Converted from a doubly linked list that took ints to a singly linked list that takes strings
 
 #include "Node.h"
+#include <string>
 
-Node::Node(int value){
+using namespace std;
+
+Node::Node(string value){
     m_value = value;
 }
 
-int Node::getValue(){
+string Node::getValue(){
     return m_value;
 }
 
@@ -16,12 +20,4 @@ Node* Node::getNext(){
 
 void Node::setNext(Node* next){
     m_next = next;
-}
-
-Node* Node::getPrev(){
-    return m_prev;
-}
-
-void Node::setPrev(Node* prev){
-    m_prev = prev;
 }
