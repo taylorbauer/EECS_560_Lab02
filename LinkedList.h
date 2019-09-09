@@ -34,9 +34,8 @@ public:
     //  @return True if the list is empty, false otherwise
     bool isEmpty();
 
-    //  These were used for debugging, they return pointers to the first and last nodes respectively
-    Node* getFirst(); // temporary, used for testing
-    // Node* getLast(); // same here
+    //  Returns a pointer to the first node in the list
+    Node* getFirst();
 
     //  @pre    None.
     //  @post   The list is printed from "first" to "last"

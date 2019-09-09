@@ -19,7 +19,7 @@ HashTable::HashTable(int valueCount) {
 
 
 HashTable::~HashTable() {
-
+    delete[] m_arr;
 }
 
 bool HashTable::isPrime(int num) {
