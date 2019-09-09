@@ -1,7 +1,7 @@
 //Originally copied from Lab 1
 
-#ifndef _LINKED_LIST_H
-#define _LINKED_LIST_H
+#ifndef LINKED_LIST_H
+#define LINKED_LIST_H
 
 #include "Node.h"
 #include <string>
