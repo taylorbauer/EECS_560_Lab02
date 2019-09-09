@@ -28,6 +28,16 @@ int LinkedList::getSize(){
 }
 
 bool LinkedList::insert(string value){
+    Node* finder = m_first;
+    for (int i = 0; i < m_size; i++) {
+        if (finder->getValue() == value) {
+            return false;
+        }
+        else {
+            finder = finder->getNext();
+        }
+    }
+
     Node* tempNode = new Node(value);
     
     if (!isEmpty()) {
@@ -83,7 +93,7 @@ bool LinkedList::remove(string value){
                 prevPtr->setNext(nodePtr->getNext());
             }
 
-            delete[] nodePtr;
+            delete nodePtr;
 
             m_size --;
             return true;
@@ -92,6 +102,16 @@ bool LinkedList::remove(string value){
         nodeCount ++;
         prevPtr = nodePtr;
         nodePtr = nodePtr->getNext();
+    }
+    return false;
+}
+
+bool LinkedList::find(string key) {
+    Node* tracker = m_first;
+    for (int i = 0; i < m_size; i++) {
+        if (tracker->getValue() == key) {
+            return true;
+        }
     }
     return false;
 }

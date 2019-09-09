@@ -8,7 +8,9 @@ public:
     HashTable(int valueCount);
     ~HashTable();
     void print();
-    void insert(string value);
+    bool insert(string value);
+    int find(string key);
+    bool remove(string value);
 private:
     int hashFunction(string value);
     bool isPrime(int num);

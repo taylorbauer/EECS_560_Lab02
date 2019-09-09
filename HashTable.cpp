@@ -38,9 +38,14 @@ void HashTable::print() {
     }
 }
 
-void HashTable::insert(string value) {
+bool HashTable::insert(string value) {
     int index = hashFunction(value);
-    m_arr[index].insert(value);
+    if (m_arr[index].insert(value)) {
+        return true;
+    }
+    else {
+        return false;
+    }
 }
 
 int HashTable::hashFunction(string value) {
@@ -49,4 +54,25 @@ int HashTable::hashFunction(string value) {
         index += int(value[i]);
     }
     return index % m_bucket_size;
+}
+
+int HashTable::find(string key) {
+    int index = hashFunction(key);
+    if (m_arr[index].find(key)) {
+        return index;
+    }
+    else {
+        return -1;      //returns -1 if not found
+    }
+}
+
+bool HashTable::remove(string value) {
+    int index = find(value);
+    if (index == -1) {
+        return false;
+    }
+    else {
+        m_arr[index].remove(value);
+        return true;
+    }
 }

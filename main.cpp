@@ -45,8 +45,6 @@ int main(int argc, char *argv[])
         Menu mainMenu(mainTable);
         mainMenu.run();
 
-        mainTable->print();
-
     }
     else {
         cout << "Error opening file\n";

@@ -68,6 +68,8 @@ public:
     //  @pre    None
     //  @post   The parent list is merged with the new parameter list, and they are sorted in ascending order
     // void merge(LinkedList* newList);
+
+    bool find(string key);
     
 private:
     Node* m_first;
