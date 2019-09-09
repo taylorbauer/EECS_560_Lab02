@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
 
         while (myFile >> value){
             mainTable->insert(value);
-            cout << "inserting " << value << endl;
         }
         myFile.close();
         cout << "\nSuccessfully copied data from " << argv[1] << endl << endl;

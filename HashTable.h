@@ -13,8 +13,11 @@ public:
     bool remove(string value);
 private:
     int hashFunction(string value);
+    int hashFunction(string value, int newBucketSize);
+    void rehash();
     bool isPrime(int num);
     int m_bucket_size;
+    int m_value_count;
     LinkedList* m_arr;
 };
 

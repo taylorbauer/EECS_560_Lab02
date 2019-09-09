@@ -112,6 +112,9 @@ bool LinkedList::find(string key) {
         if (tracker->getValue() == key) {
             return true;
         }
+        else {
+            tracker = tracker->getNext();
+        }
     }
     return false;
 }
