@@ -52,6 +52,11 @@ private:
     int m_value_count;  //  How many values have been stored in the hash table?
 
     LinkedList* m_arr;  //  A pointer to the array of linkedlists used by the hash table, effectively the table itself
+
+    //  A member method written to avoid use of STL library function calls
+    //  It does the same thing as string's .length(), it iterates through the string,
+    //  looking for the null terminal character, and returns the size of the string
+    int findLength(string value);
 };
 
 #endif

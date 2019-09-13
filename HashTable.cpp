@@ -56,7 +56,8 @@ bool HashTable::insert(string value) {
 
 int HashTable::hashFunction(string value) {
     int index = 0;
-    for (int i = 0; i < value.length(); i++) {
+    int valueLength = findLength(value);
+    for (int i = 0; i < valueLength; i++) {
         index += int(value[i]);
     }
     return index % m_bucket_size;
@@ -65,7 +66,8 @@ int HashTable::hashFunction(string value) {
 // special hash function that accepts a different bucket size
 int HashTable::hashFunction(string value, int newBucketSize) {  
     int index = 0;
-    for (int i = 0; i < value.length(); i++) {
+    int valueLength = findLength(value);
+    for (int i = 0; i < valueLength; i++) {
         index += int(value[i]);
     }
     return index % newBucketSize;
@@ -113,4 +115,12 @@ void HashTable::rehash() {
     m_arr = newArr;
 
     cout << "Hash table is rehashed!\n\n";
+}
+
+int HashTable::findLength(string value) {
+    int index = 0;
+    while (value[index] != '\0'){
+        index++;
+    }
+    return index;
 }
